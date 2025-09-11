@@ -1,4 +1,4 @@
-# 🏥 Pharmacy Ecommerce System
+# 🏥 Pharmacy Management System
 
 A comprehensive pharmacy management system with user and admin interfaces, built with Spring Boot, React, and MySQL.
 
@@ -35,10 +35,6 @@ A comprehensive pharmacy management system with user and admin interfaces, built
 ![Product Management](./frontend-admin/screenshots/product-management.png)
 *Comprehensive admin panel with real-time analytics and complete inventory management*
 
----
-
-> **✨ The application features a modern, professional design with intuitive navigation and responsive layout**
-
 ## 🎯 Overview
 
 Pharmacy Management System is a full-stack web application designed to efficiently manage pharmacy operations. The system provides three main components:
@@ -73,7 +69,7 @@ Pharmacy Management System is a full-stack web application designed to efficient
 - **RESTful API**: REST-compliant design
 - **JWT Authentication**: Secure token-based authentication
 - **Role-based Authorization**: Permission control by user roles
-- **File Upload**: Image upload and management
+- **File Upload**: Image upload and management with Cloudinary
 - **Email Service**: Authentication and notification emails
 - **Payment Integration**: VNPay payment gateway integration
 
@@ -92,7 +88,7 @@ Pharmacy Management System is a full-stack web application designed to efficient
                                  │
                     ┌────────────┴─────────────┐
                     │                          │
-                    │       MySQL Database     │
+                    │      MySQL Database      │
                     │                          │
                     └──────────────────────────┘
 ```
@@ -431,8 +427,8 @@ We welcome all contributions! To contribute:
 
 **Author**: tuannguyen30
 - Email: tuantt3010@gmail.com
-- LinkedIn: [\[Your LinkedIn Profile\]](https://www.linkedin.com/in/tu%E1%BA%A5n-nguy%E1%BB%85n-h%E1%BB%AFu-0b742132b/)
-- GitHub: [\[Your GitHub Profile\]](https://github.com/glmj10)
+- LinkedIn: [\[My LinkedIn Profile\]](https://www.linkedin.com/in/tu%E1%BA%A5n-nguy%E1%BB%85n-h%E1%BB%AFu-0b742132b/)
+- GitHub: [\[My GitHub Profile\]](https://github.com/glmj10)
 
 **Project Link**: [https://github.com/yourusername/pharmacy-management-system](https://github.com/yourusername/pharmacy-management-system)
 

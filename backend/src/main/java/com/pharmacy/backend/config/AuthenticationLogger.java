@@ -23,10 +23,8 @@ public class AuthenticationLogger extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
 
-        // Tiếp tục chuỗi filter
         filterChain.doFilter(request, response);
 
-        // Sau khi chuỗi filter thực hiện, lấy thông tin xác thực từ SecurityContextHolder
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         if (authentication != null) {

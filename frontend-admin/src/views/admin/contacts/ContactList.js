@@ -131,16 +131,14 @@ const ContactList = () => {
     })
   }
 
-  // Generate smart pagination with limited visible pages
   const generatePaginationItems = () => {
     const items = []
-    const maxVisiblePages = 5 // Maximum number of page buttons to show
+    const maxVisiblePages = 5
     const halfVisible = Math.floor(maxVisiblePages / 2)
 
     let startPage = Math.max(1, currentPage - halfVisible)
     let endPage = Math.min(totalPages, currentPage + halfVisible)
 
-    // Adjust if we're near the beginning or end
     if (currentPage <= halfVisible) {
       endPage = Math.min(totalPages, maxVisiblePages)
     }
@@ -148,7 +146,6 @@ const ContactList = () => {
       startPage = Math.max(1, totalPages - maxVisiblePages + 1)
     }
 
-    // Add first page and ellipsis if needed
     if (startPage > 1) {
       items.push(
         <CPaginationItem
@@ -170,7 +167,6 @@ const ContactList = () => {
       }
     }
 
-    // Add visible page numbers
     for (let page = startPage; page <= endPage; page++) {
       items.push(
         <CPaginationItem
@@ -185,7 +181,6 @@ const ContactList = () => {
       )
     }
 
-    // Add ellipsis and last page if needed
     if (endPage < totalPages) {
       if (endPage < totalPages - 1) {
         items.push(
@@ -244,6 +239,7 @@ const ContactList = () => {
                     <CTableHead>
                       <CTableRow>
                         <CTableHeaderCell scope="col">Thông tin liên hệ</CTableHeaderCell>
+                        <CTableHeaderCell scope="col">Số điện thoại</CTableHeaderCell>
                         <CTableHeaderCell scope="col">Nội dung</CTableHeaderCell>
                         <CTableHeaderCell scope="col">Trạng thái</CTableHeaderCell>
                         <CTableHeaderCell scope="col">Ngày gửi</CTableHeaderCell>
@@ -261,7 +257,7 @@ const ContactList = () => {
                         >
                           <CTableDataCell>
                             <div>
-                              <strong>{contact.name}</strong>
+                              <strong>{contact.fullName || contact.name}</strong>
                               <br />
                               <small className="text-muted">{contact.email}</small>
                               {contact.subject && (
@@ -271,6 +267,9 @@ const ContactList = () => {
                                 </>
                               )}
                             </div>
+                          </CTableDataCell>
+                          <CTableDataCell>
+                            <span>{contact.phoneNumber || 'Không có'}</span>
                           </CTableDataCell>
                           <CTableDataCell>
                             <div style={{ maxWidth: '200px' }}>
@@ -352,8 +351,9 @@ const ContactList = () => {
           <CModalTitle>Cập nhật trạng thái liên hệ</CModalTitle>
         </CModalHeader>
         <CModalBody>
-          <p>Liên hệ từ: <strong>{statusModal.contact?.name}</strong></p>
+          <p>Liên hệ từ: <strong>{statusModal.contact?.fullName || statusModal.contact?.name}</strong></p>
           <p>Email: <strong>{statusModal.contact?.email}</strong></p>
+          <p>Số điện thoại: <strong>{statusModal.contact?.phoneNumber || 'Không có'}</strong></p>
           <p>Chủ đề: <strong>{statusModal.contact?.subject}</strong></p>
           <CFormSelect
             value={statusModal.newStatus}

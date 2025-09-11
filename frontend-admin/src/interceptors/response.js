@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { tokenUtils } from '../utils/token';
 import authService from '../services/auth.service';
+import { globalLogoutHandler } from '../utils/globalLogout';
 
 let isRefreshing = false;
 let requestQueue = [];
