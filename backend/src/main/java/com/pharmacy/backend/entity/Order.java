@@ -3,12 +3,8 @@ package com.pharmacy.backend.entity;
 import com.pharmacy.backend.enums.OrderStatusEnum;
 import com.pharmacy.backend.enums.PaymentMethodEnum;
 import com.pharmacy.backend.enums.PaymentStatusEnum;
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -17,7 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "orders")

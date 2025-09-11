@@ -33,7 +33,7 @@ public class HomePage {
     private String category1Banner;
 
     @Column(name = "category_1_id")
-    private String category1Id;
+    private Integer category1Id;
 
     @Column(name = "category_1_title")
     private String category1Title;
@@ -42,7 +42,7 @@ public class HomePage {
     private String category2Banner;
 
     @Column(name = "category_2_id")
-    private String category2Id;
+    private Integer category2Id;
 
     @Column(name = "category_2_title")
     private String category2Title;

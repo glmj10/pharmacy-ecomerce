@@ -1,4 +1,3 @@
-
 INSERT INTO roles (name, code, description)
 SELECT * FROM (
                   SELECT 'Admin' AS name, 'ADMIN' AS code, 'Administrator with full system access' AS description

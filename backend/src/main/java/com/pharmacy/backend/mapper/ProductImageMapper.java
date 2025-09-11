@@ -6,8 +6,8 @@ import org.mapstruct.*;
 
 
 @Mapper(componentModel = "spring")
-public abstract class ProductImageMapper {
+public interface ProductImageMapper {
 
-    public abstract ProductImageResponse toProductImageResponse(ProductImage productImage);
+    ProductImageResponse toProductImageResponse(ProductImage productImage);
 
 }

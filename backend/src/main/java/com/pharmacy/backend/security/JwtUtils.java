@@ -106,7 +106,6 @@ public class JwtUtils{
         return signedJWT;
     }
 
-
     @Scheduled(cron = "0 0 * * * *")
     public void cleanUpExpiredTokens() {
         Date now = new Date();
