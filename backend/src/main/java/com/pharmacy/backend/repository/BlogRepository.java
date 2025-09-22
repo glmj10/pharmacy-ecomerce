@@ -16,5 +16,4 @@ public interface BlogRepository extends JpaRepository<Blog, Long>, JpaSpecificat
 
     Optional<Blog> findBySlug(String slug);
 
-    Page<Blog> findByTitleContainingIgnoreCase(String title, Pageable pageable);
 }

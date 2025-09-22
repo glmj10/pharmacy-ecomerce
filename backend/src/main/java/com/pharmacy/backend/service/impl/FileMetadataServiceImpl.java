@@ -108,7 +108,7 @@ public class FileMetadataServiceImpl implements FileMetadataService {
         String publicIdWithFolder = fileMetadata.getFileType() + "/" + fileMetadata.getStoredFileName();
 
         try {
-            Map<String, Object> result = cloudinary.uploader().destroy(publicIdWithFolder, ObjectUtils.asMap(
+            Map result = cloudinary.uploader().destroy(publicIdWithFolder, ObjectUtils.asMap(
                     "resource_type", "image"
             ));
 

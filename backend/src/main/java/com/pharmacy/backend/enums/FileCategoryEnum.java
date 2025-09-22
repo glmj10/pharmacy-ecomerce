@@ -13,5 +13,4 @@ public enum FileCategoryEnum {
     CATEGORY("category");
 
     private final String subDirectory;
-
 }

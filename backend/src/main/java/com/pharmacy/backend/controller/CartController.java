@@ -5,10 +5,10 @@ import com.pharmacy.backend.dto.response.ApiResponse;
 import com.pharmacy.backend.dto.response.CartItemResponse;
 import com.pharmacy.backend.dto.response.CartResponse;
 import com.pharmacy.backend.service.CartService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -42,7 +42,7 @@ public class CartController {
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<CartItemResponse>> addItemToCart(@RequestBody CartItemRequest request) {
+    public ResponseEntity<ApiResponse<CartItemResponse>> addItemToCart(@RequestBody @Valid CartItemRequest request) {
         ApiResponse<CartItemResponse> response = cartService.addItemToCart(request);
 
         return ResponseEntity.status(response.getStatus()).body(response);

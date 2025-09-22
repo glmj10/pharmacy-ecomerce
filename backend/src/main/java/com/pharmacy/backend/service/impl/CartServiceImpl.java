@@ -103,6 +103,10 @@ public class CartServiceImpl implements CartService {
                 .orElseThrow(() -> new AppException(HttpStatus.NOT_FOUND,
                         "Sản phẩm không tồn tại", "Product not found"));
 
+        if(product.getActive() == null || !product.getActive()) {
+            throw new AppException(HttpStatus.BAD_REQUEST,
+                    "Sản phẩm không khả dụng", "Product is not available");
+        }
         if (product.getQuantity() < request.getQuantity()) {
             throw new AppException(HttpStatus.BAD_REQUEST,
                     "Số lượng sản phẩm không đủ", "Insufficient product quantity");

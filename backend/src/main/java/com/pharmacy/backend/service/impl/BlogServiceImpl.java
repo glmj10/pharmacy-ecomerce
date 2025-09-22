@@ -43,7 +43,8 @@ public class BlogServiceImpl implements BlogService {
     private final FileMetadataRepository fileMetadataRepository;
 
     @Override
-    public ApiResponse<PageResponse<List<BlogResponse>>> getAllBlogs(int pageIndex, int pageSize, String title, String category) {
+    public ApiResponse<PageResponse<List<BlogResponse>>> getAllBlogs(int pageIndex,
+                                                                     int pageSize, String title, String category) {
         if(pageIndex <= 0) {
             pageIndex = 1;
         }
